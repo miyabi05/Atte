@@ -16,6 +16,8 @@
     </div>
   </header>
 
+  <form class="form" action="/registers" method="post">
+  @csrf
   <main>
     <div class="atte__content">
       <div class="atte__heading">
@@ -37,13 +39,14 @@
       <input type="password_confirm" name="password_confirm" placeholder="確認用パスワード"style="width:300px;height:30px" />
     </div>
     <div class="form__button">
-      <button class="form__button-login" type="submit" style="width:300px;height:30px">ログイン</button>
+      <button class="form__button-login" type="submit" style="width:300px;height:30px">会員登録</button>
     </div>
     <div class="form__register">
       <p>アカウントをお持ちの方はこちらから</p>
-      <a href="#" onclick="js_alert()">ログイン</a>
+      <a href="/" onclick="js_alert()">ログイン</a>
   </div>
   </main>
+  </form>
 
   <footer class="footer">
     <div class="footer__inner">

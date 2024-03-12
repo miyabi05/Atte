@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,9 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', [UserController::class, 'index']);
-Route::get('/login', [LoginController::class, 'login']);
+Route::middleware('auth')->group(function () {
+Route::post('/users/login', [UserController::class, 'login']);
+});
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/registers', [RegisterController::class, 'store']);
+Route::post('/users', [UserController::class, 'store']);
