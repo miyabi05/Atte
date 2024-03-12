@@ -16,7 +16,7 @@
     </div>
   </header>
 
-  <form class="form">
+  <form class="form" action="/users" method="post">
       @csrf
   <main>
     <div class="atte__content">
@@ -37,9 +37,10 @@
     </div>
     <div class="form__register">
       <p>アカウントをお持ちでない方はこちらから</p>
-      <a href="#" onclick="js_alert()">会員登録</a>
+      <a href="/register" onclick="js_alert()">会員登録</a>
   </div>
   </main>
+  </form>
 
   <footer class="footer">
     <div class="footer__inner">
