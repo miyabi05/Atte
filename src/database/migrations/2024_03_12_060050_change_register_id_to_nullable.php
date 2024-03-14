@@ -14,7 +14,6 @@ class ChangeRegisterIdToNullable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('register_id')->nullable(true)->change();
         });
     }
 

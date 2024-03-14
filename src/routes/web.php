@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\StampController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -17,8 +17,10 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', [UserController::class, 'index']);
+Route::get('/stamp', [StampController::class, 'stamp']);
+Route::post('/stamps', [StampController::class, 'store']);
 Route::middleware('auth')->group(function () {
-Route::post('/users/login', [UserController::class, 'login']);
+Route::post('/users/stamp', [UserController::class, 'stamp']);
 });
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/registers', [RegisterController::class, 'store']);
