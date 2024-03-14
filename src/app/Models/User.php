@@ -17,28 +17,20 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'email',
-        'password',
-        'register_id'
-    ];
+    protected $guarded = array('id');
+    public static $rules = array(
+        'register_id' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+    );
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    public function getTitle(){
+        return 'ID'.$this->id . ':' . $this->title;
+    }
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function register(){
+        return $this->belongsTo('App\Models\Register');
+
+
+}
 }

@@ -14,7 +14,7 @@ class UserController extends Controller
 public function store(Request $request){
     $user = $request->only(['email','password','register_id']);
     User::create($user);
-    return view('index');
+    return view('stamp');
 }
-    
+
 }

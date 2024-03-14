@@ -9,14 +9,13 @@ class Register extends Model
 {
     use HasFactory;
 
-    protected $attributes = [
-        'password_confirmation' => 1,
-    ];
-
     protected $fillable = [
         'name',
         'email',
         'password',
         'password_confirmation'
     ];
+    public function users(){
+        return $this->hasMany('App\Models\User');
+      }
     }

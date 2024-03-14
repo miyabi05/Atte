@@ -33,9 +33,9 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.register');
         });
         Fortify::loginView(function () {
-            return view('auth.index');
+            return view('auth.stamp');
         });
-        RateLimiter::for('index', function (Request $request) {
+        RateLimiter::for('stamp', function (Request $request) {
             $email = (string) $request->email;
             return Limit::perMinute(10)->by($email . $request->ip());
         });
