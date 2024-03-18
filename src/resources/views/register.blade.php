@@ -44,7 +44,7 @@
       <input type="password" name="password" placeholder="パスワード" style="width:300px;height:30px"/>
     </div>
     <div class="form__input--text">
-      <input type="password_confirm" name="password_confirm" placeholder="確認用パスワード"style="width:300px;height:30px" />
+      <input type="password_confirmation" name="password_confirmation" placeholder="確認用パスワード"style="width:300px;height:30px" />
     </div>
     <div class="form__button">
       <button class="form__button-login" type="submit" style="width:300px;height:30px">会員登録</button>
