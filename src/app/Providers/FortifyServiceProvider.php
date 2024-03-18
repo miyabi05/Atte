@@ -26,18 +26,5 @@ class FortifyServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-        Fortify::createUsersUsing(CreateNewUser::class);
-        Fortify::registerView(function () {
-            return view('auth.register');
-        });
-        Fortify::loginView(function () {
-            return view('auth.stamp');
-        });
-        RateLimiter::for('stamp', function (Request $request) {
-            $email = (string) $request->email;
-            return Limit::perMinute(10)->by($email . $request->ip());
-        });
-    }
+   
 }
