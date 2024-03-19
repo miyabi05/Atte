@@ -12,7 +12,7 @@ class UserController extends Controller
         return view('index');
 }
 public function store(Request $request){
-    $user = $request->only(['email','password','register_id']);
+    $user = $request->only(['email','password']);
     User::create($user);
     return view('stamp');
 }

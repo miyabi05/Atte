@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\StampController;
 use App\Http\Controllers\RegisterController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +20,8 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', [UserController::class, 'index']);
 Route::get('/stamp', [StampController::class, 'stamp']);
 Route::post('/stamps', [StampController::class, 'store']);
-Route::middleware('auth')->group(function () {
+Route::post('/users', [UserController::class, 'store'])->middleware(\App\Http\Middleware\AtteMiddleware::class);
 Route::post('/users/stamp', [UserController::class, 'stamp']);
-});
-Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/registers', [RegisterController::class, 'store']);
-Route::post('/users', [UserController::class, 'store']);
+Route::get('/date', [StampController::class, 'date']);

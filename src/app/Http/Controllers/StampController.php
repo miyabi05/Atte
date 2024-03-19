@@ -8,6 +8,10 @@ use App\Models\Stamp;
 
 class StampController extends Controller
 {
+    public function date(){
+      
+        return view('date');
+    }
     public function stamp(){
 
         return view('stamp');
