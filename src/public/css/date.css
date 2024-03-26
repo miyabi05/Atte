@@ -15,13 +15,33 @@
   font-size: 30px;
 }
 
-.footer{
-  position: absolute;
-  bottom: 0;
+ul{
+  text-align:right;
+}
+
+li{
+  display:inline-block;
+  padding:0px 10px;
+  zoom:1;
 }
 
 body{
   background-color: ghostwhite;
+}
+
+main{
+  text-align: center;
+}
+
+.table{
+  display: flex;
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
 }
 
 .footer__inner {

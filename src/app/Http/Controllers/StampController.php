@@ -9,8 +9,8 @@ use App\Models\Stamp;
 class StampController extends Controller
 {
     public function date(){
-      
-        return view('date');
+        $stamps = Stamp::all();
+        return view('date', ['stamps' => $stamps]);
     }
     public function stamp(){
 

@@ -16,8 +16,8 @@ class AtteMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->input('email','password') !== 'email','password'){
-            return redirect('/');
+        if ($request->input('email,password') !== 'email,password'){
+            return redirect('/stamp');
         }
         return $next($request);
     }

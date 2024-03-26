@@ -21,6 +21,7 @@
   </header>
   
   <form class="form" action="/stamps" method="post">
+  @csrf
   <main>
     <div class=greeting>
     {{--<p>ようこそ、{{ Auth::user()->name }}さん</p>--}}
